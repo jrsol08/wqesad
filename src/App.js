@@ -100,7 +100,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [mintAmount, setMintAmount] = useState(1);
+  const [publicSaleMintAmount, setpublicSaleMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "0x375b524194cdf48616FD02c45820BD5F95Aa8Ac3",
     SCAN_LINK: "https://goerli.etherscan.io/address/0x375b524194cdf48616fd02c45820bd5f95aa8ac3",
@@ -123,14 +123,14 @@ function App() {
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalCostWei = String(cost * publicSaleMintAmount);
+    let totalGasLimit = String(gasLimit * publicSaleMintAmount);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mint(blockchain.account, mintAmount)
+      .publicSaleMint(blockchain.account, publicSaleMintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -152,20 +152,20 @@ function App() {
       });
   };
 
-  const decrementMintAmount = () => {
-    let newMintAmount = mintAmount - 1;
-    if (newMintAmount < 1) {
-      newMintAmount = 1;
+  const decrementpublicSaleMintAmount = () => {
+    let newpublicSaleMintAmount = publicSaleMintAmount - 1;
+    if (newpublicSaleMintAmount < 1) {
+      newpublicSaleMintAmount = 1;
     }
-    setMintAmount(newMintAmount);
+    setpublicSaleMintAmount(newpublicSaleMintAmount);
   };
 
-  const incrementMintAmount = () => {
-    let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 50) {
-      newMintAmount = 50;
+  const incrementpublicSaleMintAmount = () => {
+    let newpublicSaleMintAmount = publicSaleMintAmount + 1;
+    if (newpublicSaleMintAmount > 50) {
+      newpublicSaleMintAmount = 50;
     }
-    setMintAmount(newMintAmount);
+    setpublicSaleMintAmount(newpublicSaleMintAmount);
   };
 
   const getData = () => {
@@ -328,7 +328,7 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          decrementMintAmount();
+                          decrementpublicSaleMintAmount();
                         }}
                       >
                         -
@@ -340,14 +340,14 @@ function App() {
                           color: "var(--accent-text)",
                         }}
                       >
-                        {mintAmount}
+                        {publicSaleMintAmount}
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          incrementMintAmount();
+                          incrementpublicSaleMintAmount();
                         }}
                       >
                         +
