@@ -112,12 +112,12 @@ function App() {
     NFT_NAME: "yow",
     SYMBOL: "Y",
     MAX_SUPPLY: 100,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
-    GAS_LIMIT: 0,
+    WEI_COST: 3000000000000000,
+    DISPLAY_COST: 0.003,
+    GAS_LIMIT: 285000,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
-    SHOW_BACKGROUND: false,
+    SHOW_BACKGROUND: true,
   });
 
   const claimNFTs = () => {
