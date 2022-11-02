@@ -146,11 +146,11 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_publicSaleMintAmount",
+				"name": "_mintAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "publicSaleMint",
+		"name": "mint",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -313,11 +313,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_newmaxpublicSaleMintAmount",
+				"name": "_newmaxmintAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "setmaxpublicSaleMintAmount",
+		"name": "setmaxmintAmount",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -515,7 +515,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "maxpublicSaleMintAmount",
+		"name": "maxmintAmount",
 		"outputs": [
 			{
 				"internalType": "uint256",
