@@ -102,15 +102,15 @@ function App() {
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
-    SCAN_LINK: "",
+    CONTRACT_ADDRESS: "0x375b524194cdf48616FD02c45820BD5F95Aa8Ac3",
+    SCAN_LINK: "https://goerli.etherscan.io/address/0x375b524194cdf48616fd02c45820bd5f95aa8ac3",
     NETWORK: {
-      NAME: "",
-      SYMBOL: "",
-      ID: 0,
+      NAME: "Goerli test network",
+      SYMBOL: "GoerliETH",
+      ID: 5,
     },
-    NFT_NAME: "",
-    SYMBOL: "",
+    NFT_NAME: "yow",
+    SYMBOL: "Y",
     MAX_SUPPLY: 1,
     WEI_COST: 0,
     DISPLAY_COST: 0,
