@@ -140,7 +140,7 @@ function App() {
       .once("error", (err) => {
         console.log(err);
         setFeedback("Sorry, something went wrong please try again later.");
-        setClaimingNft(false);
+        setClaimingNft(true);
       })
       .then((receipt) => {
         console.log(receipt);
