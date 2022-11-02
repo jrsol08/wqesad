@@ -2,9 +2,9 @@
   "CONTRACT_ADDRESS": "0x375b524194cdf48616FD02c45820BD5F95Aa8Ac3",
   "SCAN_LINK": "https://etherscan.io/address/0x375b524194cdf48616FD02c45820BD5F95Aa8Ac3",
   "NETWORK": {
-    "NAME": "Ethereum",
-    "SYMBOL": "ETH",
-    "ID": 1
+    "NAME": "Goerli test network",
+    "SYMBOL": "GoerliETH",
+    "ID": 5
   },
   "NFT_NAME": "Basic Blue Chip",
   "SYMBOL": "BCC",
