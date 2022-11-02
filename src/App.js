@@ -100,7 +100,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [publicSaleMintAmount, setpublicSaleMintAmount] = useState(1);
+  const [mintAmount, mintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "0x375b524194cdf48616FD02c45820BD5F95Aa8Ac3",
     SCAN_LINK: "https://goerli.etherscan.io/address/0x375b524194cdf48616fd02c45820bd5f95aa8ac3",
@@ -123,8 +123,8 @@ function App() {
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * publicSaleMintAmount);
-    let totalGasLimit = String(gasLimit * publicSaleMintAmount);
+    let totalCostWei = String(cost * mintAmount);
+    let totalGasLimit = String(gasLimit * mintAmount);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
